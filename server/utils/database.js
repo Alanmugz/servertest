@@ -1,3 +1,4 @@
+const dbConfig = require("../config/db.config.js");
 import { Sequelize } from 'sequelize';
 
 
