@@ -1,18 +1,18 @@
-const dbConfig = require("../config/db.config.js");
-import { Sequelize } from 'sequelize';
+import dbConfig from '../config/db.config.js';
 
+import { Sequelize } from 'squelize';
 
-const sequelize = new Sequelize("LoginDB", "root", 123456, {
-    host: "mysqldb",
-    dialect: "mysql",
-    port: 3306,
+const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
+    host: dbConfig.HOST,
+    dialect: dbConfig.dialect,
+    port: dbConfig.port,
     operatorsAliases: false,
-
+  
     pool: {
-      max: 5,
-      min: 0,
-      acquire: 30000,
-      idle: 10000
+      max: dbConfig.pool.max,
+      min: dbConfig.pool.min,
+      acquire: dbConfig.pool.acquire,
+      idle: dbConfig.pool.idle
     }
   });
 
