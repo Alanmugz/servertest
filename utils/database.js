@@ -2,7 +2,7 @@ import { Sequelize } from 'sequelize';
 
 
 const sequelize = new Sequelize("LoginDB", "root", 123456, {
-    host: localhost,
+    host: "localhost",
     dialect: "mysql",
     port: 3306,
     operatorsAliases: false,
