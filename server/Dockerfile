@@ -6,6 +6,4 @@ RUN npm install
 COPY . /data/app/
 WORKDIR /data/app/
 
-EXPOSE 5000
-
 CMD [ "node", "app.js" ]
