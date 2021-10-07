@@ -1,9 +1,9 @@
 import { Sequelize } from 'sequelize';
 
-const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
-    host: dbConfig.HOST,
-    dialect: dbConfig.dialect,
-    port: dbConfig.port,
+const sequelize = new Sequelize("LoginDB", "root", "123456", {
+    host: "mysqldb",
+    dialect: "mysql",
+    port: 3306,
     operatorsAliases: false,
   
     pool: {
