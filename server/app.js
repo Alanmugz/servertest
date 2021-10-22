@@ -19,6 +19,10 @@ app.use((_, res, next) => {
 
 app.use(router);
 
-sequelize.sync(); 
-
-app.listen(3000);
+sequelize.sync({logging:console.log, force:true})
+        .then(() => {
+            console.log(`Database & tables created!`);
+            return app.listen(3000)
+        }).catch((error)=>{
+            return console.error(error);
+        });
